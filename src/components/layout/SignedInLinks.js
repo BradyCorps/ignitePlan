@@ -1,0 +1,22 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom'; //NavLink === access to active class within react-dom when certain link is active
+
+const SIL = () => {
+	return (
+		<ul className="right">
+			<li>
+				<NavLink to="/">New Project</NavLink>
+			</li>
+			<li>
+				<NavLink to="/">Log-Out</NavLink>
+			</li>
+			<li>
+				<NavLink to="/" className="btn btn-floating pink lighten-1">
+					BC
+				</NavLink>
+			</li>
+		</ul>
+	);
+};
+
+export default SIL;
