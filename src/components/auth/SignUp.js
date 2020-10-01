@@ -20,7 +20,7 @@ class SignUp extends Component {
 
 	render() {
 		return (
-			<div className="container signUp">
+			<div className="container">
 				<form onSubmit={this.handleSubmit}>
 					<h3 className="center-align white-text text-darken-3">Sign-Up</h3>
 					<div className="input-field">

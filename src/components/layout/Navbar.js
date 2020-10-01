@@ -5,7 +5,7 @@ import SOL from './SignedOutLinks';
 
 const Navbar = () => {
 	return (
-		<nav className="nav-wrapper grey darken-3">
+		<nav className="nav-wrapper blue-grey darken-3">
 			<div className="container">
 				<Link to="/" className="brand-logo left">
 					IgnitePlan

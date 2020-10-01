@@ -17,7 +17,7 @@ class SignIn extends Component {
 	};
 	render() {
 		return (
-			<div className="container login">
+			<div className="container">
 				<form onSubmit={this.handleSubmit}>
 					<h3 className="center-align white-text text-darken-3">Sign-In</h3>
 					<div className="input-field">
