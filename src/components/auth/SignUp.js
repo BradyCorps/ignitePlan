@@ -23,6 +23,7 @@ class SignUp extends Component {
 	render() {
 		const { auth } = this.props;
 		// Route Guarding Redirecting IF there is a UID
+		// Route Guarding === redirecting users to pages they are eligible to see.
 		if (auth.uid) return <Redirect to="/" />;
 		return (
 			<div className="container">
