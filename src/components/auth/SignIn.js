@@ -26,19 +26,38 @@ class SignIn extends Component {
 		return (
 			<div className="container">
 				<form onSubmit={this.handleSubmit}>
-					<h3 className="center-align white-text text-darken-3">Sign-In</h3>
+					<h3 className="center-align white-text text-darken-3">
+						Sign-In
+						<span role="img" aria-label="login">
+							🗳️
+						</span>
+					</h3>
 					<div className="input-field">
 						<label id="white" htmlFor="email">
-							Email
+							<span role="img" aria-label="email">
+								📧{' '}
+							</span>
 						</label>
-						<input type="email" id="email" onChange={this.handleChange} />
+						<input
+							className="color-white"
+							type="email"
+							id="email"
+							onChange={this.handleChange}
+						/>
 					</div>
 
 					<div className="input-field">
 						<label id="white" htmlFor="password">
-							Password
+							<span role="img" aria-label="key">
+								🔑
+							</span>
 						</label>
-						<input type="password" id="password" onChange={this.handleChange} />
+						<input
+							className="color-white"
+							type="password"
+							id="password"
+							onChange={this.handleChange}
+						/>
 					</div>
 
 					<div className="center-align">

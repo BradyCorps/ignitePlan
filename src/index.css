@@ -52,3 +52,12 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .radius {
 	border-radius: 0.5rem;
 }
+
+.color-white {
+	color: white;
+}
+
+.brand-logo {
+	font-family: 'Homemade Apple', cursive;
+	text-transform: lowercase;
+}

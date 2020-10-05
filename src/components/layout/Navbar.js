@@ -12,7 +12,10 @@ const Navbar = props => {
 		<nav className="nav-wrapper blue-grey darken-3">
 			<div className="container">
 				<Link to="/" className="brand-logo left">
-					IgnitePlan
+					IgnitePlan{' '}
+					<span role="img" aria-label="fire">
+						🔥{' '}
+					</span>
 				</Link>
 				{links}
 			</div>
