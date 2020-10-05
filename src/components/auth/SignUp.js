@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { signUp } from '../../store/actions/authActions';
 class SignUp extends Component {
 	state = {
 		email: '',
@@ -17,11 +17,11 @@ class SignUp extends Component {
 	};
 	handleSubmit = e => {
 		e.preventDefault();
-		console.log(this.state);
+		this.props.signUp(this.state); // represents new user and is passed through mapDispatch
 	};
 
 	render() {
-		const { auth } = this.props;
+		const { auth, authError } = this.props;
 		// Route Guarding Redirecting IF there is a UID
 		if (auth.uid) return <Redirect to="/" />;
 		return (
@@ -43,10 +43,10 @@ class SignUp extends Component {
 					</div>
 
 					<div className="input-field">
-						<label id="white" htmlFor="First Name">
+						<label id="white" htmlFor="firstName">
 							First Name
 						</label>
-						<input type="text" id="First Name" onChange={this.handleChange} />
+						<input type="text" id="firstName" onChange={this.handleChange} />
 					</div>
 
 					<div className="input-field">
@@ -58,6 +58,10 @@ class SignUp extends Component {
 
 					<div className="center-align">
 						<button className="btn btn-large blue lighten-1">Sign-Up</button>
+						<div className="red-text center">
+							{/* if autherror exists output p template else null */}
+							{authError ? <p>{authError} </p> : null}
+						</div>
 					</div>
 				</form>
 			</div>
@@ -68,7 +72,13 @@ class SignUp extends Component {
 const mapStateToProps = state => {
 	return {
 		auth: state.firebase.auth,
+		authError: state.auth.authError, // Root reducer stores auth data on auth parameter
 	};
 };
 
-export default connect(mapStateToProps)(SignUp);
+const mapDispatchToProps = dispatch => {
+	return {
+		signUp: newUser => dispatch(signUp(newUser)),
+	};
+};
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
