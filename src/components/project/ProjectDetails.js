@@ -20,7 +20,7 @@ const ProjectDetails = props => {
 						<div>
 							Posted by {project.authorFirstName} {project.authorLastName}
 						</div>
-						<div>2nd September, 2am</div>
+						<div>Created at {project.createdAt.toDate().toDateString()}</div>
 					</div>
 				</div>
 			</div>

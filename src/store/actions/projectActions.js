@@ -2,16 +2,18 @@ export const createProject = project => {
 	return (dispatch, getState, { getFirebase, getFirestore }) => {
 		// make async call to database
 		const firestore = getFirestore();
+		const profile = getState().firebase.profile;
+		const authorId = getState().firebase.auth.uid;
 		// async code for adding project to database
 		firestore
 			.collection('projects')
 			.add({
 				// spread operator same as using project.title && project.content
 				...project,
-				authorFireName: 'Brady',
-				authorLastName: 'Corps',
-				authorId: 12345,
-				createAt: new Date(),
+				authorFirstName: profile.firstName,
+				authorLastName: profile.lastName,
+				authorId: authorId,
+				createdAt: new Date(),
 				// then method fires when action is complete --> doc added to collection
 			})
 			.then(() => {

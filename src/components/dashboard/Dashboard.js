@@ -29,7 +29,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => {
-	console.log(state);
 	return {
 		// no longer outputting dummy data, now outputting data from firestore
 		projects: state.firestore.ordered.projects,

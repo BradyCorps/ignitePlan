@@ -5,9 +5,9 @@ import SOL from './SignedOutLinks';
 import { connect } from 'react-redux';
 
 const Navbar = props => {
-	const { auth } = props;
+	const { auth, profile } = props;
 	// Boolean true if login --> false if not --> if UID doesnt exist === false --> showing SIL
-	const links = auth.uid ? <SIL /> : <SOL />;
+	const links = auth.uid ? <SIL profile={profile} /> : <SOL />;
 	return (
 		<nav className="nav-wrapper blue-grey darken-3">
 			<div className="container">
@@ -26,6 +26,7 @@ const Navbar = props => {
 const mapStateToProps = state => {
 	return {
 		auth: state.firebase.auth,
+		profile: state.firebase.profile,
 	};
 };
 

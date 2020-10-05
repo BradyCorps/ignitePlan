@@ -16,8 +16,8 @@ class CreateProject extends Component {
 	};
 	handleSubmit = e => {
 		e.preventDefault();
-		// console.log(this.state);
 		this.props.createProject(this.state);
+		this.props.history.push('/');
 	};
 
 	render() {
@@ -48,9 +48,7 @@ class CreateProject extends Component {
 					</div>
 
 					<div className="center-align">
-						<button className="btn btn-large green lighten-1 z-depth-0">
-							Create
-						</button>
+						<button className="btn btn-large green lighten-1">Create</button>
 					</div>
 				</form>
 			</div>
