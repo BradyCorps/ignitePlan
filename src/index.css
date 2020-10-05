@@ -61,3 +61,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 	font-family: 'Homemade Apple', cursive;
 	text-transform: lowercase;
 }
+
+.notifications {
+	color: white;
+}
